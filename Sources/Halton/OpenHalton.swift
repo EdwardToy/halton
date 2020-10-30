@@ -1,12 +1,12 @@
 
-struct OpenHalton {
+public struct OpenHalton {
     var index: Int
     
-    init(seed: Int) {
+    public init(seed: Int) {
         self.index = seed
     }
     
-    mutating func next(_ canvas: (width: Double, height: Double)) -> HPoint {
+    public mutating func next(_ canvas: (width: Double, height: Double)) -> HPoint {
         let point = indexToHPoint(index)
         let scaledPoint = scale(canvas.width, canvas.height)(point)
 
@@ -15,7 +15,7 @@ struct OpenHalton {
         return scaledPoint
     }
     
-    mutating func next(_ canvas: (width: Double, height: Double), fulfilling predicate: (HPoint) -> Bool) -> HPoint {
+    public mutating func next(_ canvas: (width: Double, height: Double), fulfilling predicate: (HPoint) -> Bool) -> HPoint {
         let point = indexToHPoint(index)
         let scaledPoint = scale(canvas.width, canvas.height)(point)
         

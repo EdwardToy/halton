@@ -8,7 +8,7 @@ public struct ClosedHalton {
         self.count = count
     }
     
-    func points(for canvas: (width: Double, height: Double)) -> [HPoint] {
+    public func points(for canvas: (width: Double, height: Double)) -> [HPoint] {
         return (seed..<(seed+count))
             .map { scale(canvas.width, canvas.height)(indexToHPoint($0)) }
     }
